@@ -22,5 +22,6 @@ alias te='$EDITOR ~/docs/notas/todo.txt'
 alias py='python3'
 
 # default parameters
+alias grep='grep --color=auto'
 alias ls='ls --color=auto --group-directories-first'
 
