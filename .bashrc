@@ -2,7 +2,7 @@
 export EDITOR=nvim
 
 get_git_b () {
-	git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1 /'
+	B=$(git branch --show-current 2>/dev/null) && echo "$B "
 }
 
 # made with the help of https://bashrcgenerator.com/
