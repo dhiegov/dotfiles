@@ -7,7 +7,7 @@ get_git_b () {
 
 # made with the help of https://bashrcgenerator.com/
 # looks like this:
-# \ username@hostname [14:30] Documents
+# \ username@hostname [HH:MM] current-directory
 # / $ typed command
 # and like this when in a git repo's main branch:
 # \ mario@peachmainframe [20:30] bowser-destroyer-hack
