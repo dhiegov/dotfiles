@@ -1,3 +1,4 @@
 calendar = ~/docs/notas/calendario.when
 editor = $EDITOR
+ampm = 0
 
