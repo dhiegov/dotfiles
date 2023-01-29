@@ -26,5 +26,5 @@ alias grep='grep --color=auto'
 alias ls='ls --color=auto --group-directories-first'
 
 # autorun at the start of every terminal window
-when --past=0 --future=2
+when --past=0 --future=3
 
