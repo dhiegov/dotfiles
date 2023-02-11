@@ -13,12 +13,18 @@ get_git_s () {
 	a=$(echo $gits | grep -e '^??' | wc -l)
 	# git added / newly tracking files
 	A=$(echo $gits | grep -e '^A' | wc -l)
+	# deleted unstaged files
+	d=$(echo $gits | grep -e '^ D' | wc -l)
+	# deleted staged files
+	D=$(echo $gits | grep -e '^D' | wc -l)
 
 	mout=$([ $m -gt 0 ] && echo -n m)
 	mout=$mout$([ $M -gt 0 ] && echo -n M)
 	aout=$([ $a -gt 0 ] && echo -n a)
 	aout=$aout$([ $A -gt 0 ] && echo -n A)
-	echo -n "$aout$mout "
+	dout=$([ $d -gt 0 ] && echo -n d)
+	dout=$dout$([ $D -gt 0 ] && echo -n D)
+	echo -n "$aout$mout$dout "
 }
 
 get_git_b () {
