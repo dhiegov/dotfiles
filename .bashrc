@@ -14,9 +14,11 @@ get_git_s () {
 	# git added / newly tracking files
 	A=$(echo $gits | grep -e '^A' | wc -l)
 
-	mout="${m}m${M}"
-	aout="${a}a${A}"
-	echo -n "$aout $mout "
+	mout=$([ $m -gt 0 ] && echo -n m)
+	mout=$mout$([ $M -gt 0 ] && echo -n M)
+	aout=$([ $a -gt 0 ] && echo -n a)
+	aout=$aout$([ $A -gt 0 ] && echo -n A)
+	echo -n "$aout$mout "
 }
 
 get_git_b () {
@@ -29,7 +31,7 @@ get_git_b () {
 # ╱ $ typed command
 # and like this when in a git repo's main branch with some staged files:
 # ╲ mario@peachmainframe 20:30 bowser-destroyer-hack
-# ╱ main 0a1 1m3 $ echo 'mario' > its-me.txt
+# ╱ main AmM $ echo 'mario' > its-me.txt
 export PS1="╲ \u@\h \A \[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;14m\]\W\[$(tput sgr0)\]\n╱ \$(get_git_b)\$(get_git_s)\[$(tput sgr0)\]\[\033[38;5;3m\]\\$\[$(tput sgr0)\] \[$(tput sgr0)\]"
 
 # got from https://news.ycombinator.com/item?id=11070797
