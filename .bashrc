@@ -1,6 +1,24 @@
 
 export EDITOR=nvim
 
+get_git_s () {
+	git status 1>/dev/null 2>/dev/null || return 1
+	IFS=\n
+	gits=$(git status --porcelain)
+	# modified staged files
+	M=$(echo $gits | grep -e '^M' | wc -l)
+	# modified unstaged files
+	m=$(echo $gits | grep -e '^ M' | wc -l)
+	# unadded / untracked files
+	a=$(echo $gits | grep -e '^??' | wc -l)
+	# git added / newly tracking files
+	A=$(echo $gits | grep -e '^A' | wc -l)
+
+	mout="${m}m${M}"
+	aout="${a}a${A}"
+	echo -n "$aout $mout "
+}
+
 get_git_b () {
 	B=$(git branch --show-current 2>/dev/null) && echo "$B "
 }
@@ -9,10 +27,10 @@ get_git_b () {
 # looks like this:
 # ╲ username@hostname HH:MM current-directory
 # ╱ $ typed command
-# and like this when in a git repo's main branch:
+# and like this when in a git repo's main branch with some staged files:
 # ╲ mario@peachmainframe 20:30 bowser-destroyer-hack
-# ╱ main $ echo 'mario' > its-me.txt
-export PS1="╲ \u@\h \A \[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;14m\]\W\[$(tput sgr0)\]\n╱ \$(get_git_b)\[$(tput sgr0)\]\[\033[38;5;3m\]\\$\[$(tput sgr0)\] \[$(tput sgr0)\]"
+# ╱ main 0a1 1m3 $ echo 'mario' > its-me.txt
+export PS1="╲ \u@\h \A \[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;14m\]\W\[$(tput sgr0)\]\n╱ \$(get_git_b)\$(get_git_s)\[$(tput sgr0)\]\[\033[38;5;3m\]\\$\[$(tput sgr0)\] \[$(tput sgr0)\]"
 
 # got from https://news.ycombinator.com/item?id=11070797
 alias config='/usr/bin/git --git-dir=$HOME/.config.git/ --work-tree=$HOME'
