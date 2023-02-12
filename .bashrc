@@ -17,6 +17,8 @@ get_git_s () {
 	d=$(echo $gits | grep -e '^ D' | wc -l)
 	# deleted staged files
 	D=$(echo $gits | grep -e '^D' | wc -l)
+	# renamed staged files
+	R=$(echo $gits | grep -e '^R' | wc -l)
 
 	mout=$([ $m -gt 0 ] && echo -n m)
 	mout=$mout$([ $M -gt 0 ] && echo -n M)
@@ -24,7 +26,8 @@ get_git_s () {
 	aout=$aout$([ $A -gt 0 ] && echo -n A)
 	dout=$([ $d -gt 0 ] && echo -n d)
 	dout=$dout$([ $D -gt 0 ] && echo -n D)
-	echo -n "$aout$mout$dout "
+	rout=$([ $R -gt 0 ] && echo -n R)
+	echo -n "$aout$mout$dout$rout "
 }
 
 get_git_b () {
