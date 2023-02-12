@@ -5,6 +5,8 @@ get_git_s () {
 	git status 1>/dev/null 2>/dev/null || return 1
 	IFS=\n
 	gits=$(git status --porcelain)
+	[ ${#gits} -eq 0 ] && { echo -n "clean "; return 0; }
+
 	# modified staged files
 	M=$(echo $gits | grep -e '^M' | wc -l)
 	# modified unstaged files
