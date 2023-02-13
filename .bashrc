@@ -54,7 +54,7 @@ alias te='$EDITOR ~/docs/notas/todo.txt'
 alias py='python3'
 
 # default parameters
-alias grep='grep --color=auto'
+alias grep='grep --color=auto --ignore-case'
 alias ls='ls --color=auto --group-directories-first'
 
 # autorun at the start of every terminal window
