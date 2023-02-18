@@ -2,9 +2,9 @@
 export EDITOR=nvim
 
 get_git_s () {
-	git status 1>/dev/null 2>/dev/null || return 1
 	IFS=\n
-	gits=$(git status --porcelain)
+	gits=$(git status --porcelain 2>/dev/null) || return 1
+
 	[ ${#gits} -eq 0 ] && { echo -n "clean "; return 0; }
 
 	# modified staged files
