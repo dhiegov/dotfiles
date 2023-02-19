@@ -23,7 +23,7 @@ get_git_s () {
 	echo $gits | grep -e '^M' 1>/dev/null
 	M=$?
 	# modified unstaged files
-	echo $gits | grep -e '^ M' 1>/dev/null
+	echo $gits | grep -e '^.M' 1>/dev/null
 	m=$?
 	# unadded / untracked files
 	echo $gits | grep -e '^??' 1>/dev/null
