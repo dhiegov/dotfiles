@@ -41,12 +41,9 @@ get_git_s () {
 	echo $gits | grep -e '^R' 1>/dev/null
 	R=$?
 
-	mout=$([ $m -eq 0 ] && echo -n m)
-	mout=$mout$([ $M -eq 0 ] && echo -n M)
-	aout=$([ $a -eq 0 ] && echo -n a)
-	aout=$aout$([ $A -eq 0 ] && echo -n A)
-	dout=$([ $d -eq 0 ] && echo -n d)
-	dout=$dout$([ $D -eq 0 ] && echo -n D)
+	mout=$([ $m -eq 0 ] && echo -n m)$([ $M -eq 0 ] && echo -n M)
+	aout=$([ $a -eq 0 ] && echo -n a)$([ $A -eq 0 ] && echo -n A)
+	dout=$([ $d -eq 0 ] && echo -n d)$([ $D -eq 0 ] && echo -n D)
 	rout=$([ $R -eq 0 ] && echo -n R)
 	echo -n "$aout$mout$dout$rout "
 }
