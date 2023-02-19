@@ -6,7 +6,9 @@ get_git_s () {
 	gits=$(git status --porcelain 2>/dev/null) || return 1
 
 	[ ${#gits} -eq 0 ] && { echo -n "clean "; return 0; }
+	[ "$gits" = "$previousgits" ] && { echo -n "(using cache...) "; echo -n "$previousout"; return 0; }
 
+	echo -n "(regenerating get_git_s...) "
 	# modified staged files
 	M=$(echo $gits | grep -e '^M' | wc -l)
 	# modified unstaged files
@@ -29,7 +31,10 @@ get_git_s () {
 	dout=$([ $d -gt 0 ] && echo -n d)
 	dout=$dout$([ $D -gt 0 ] && echo -n D)
 	rout=$([ $R -gt 0 ] && echo -n R)
-	echo -n "$aout$mout$dout$rout "
+	out="$aout$mout$dout$rout "
+	echo -n "$out"
+	export previousgits="$gits"
+	export previousout="$out"
 }
 
 get_git_b () {
