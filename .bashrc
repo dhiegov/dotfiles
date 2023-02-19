@@ -1,6 +1,18 @@
 
 export EDITOR=nvim
 
+# get git status summary
+#
+# Outputs a short string which indicates if there are
+# any files which have been modified (m/M); created, but
+# yet untracked (a/A); deleted (d/D) or renamed (R).
+# Capital letters indicate the corresponding change has
+# been staged and is ready to be committed.
+#
+# It's meant to be used as part of PS1, as a way of showing
+# that a git command had an effect or simply that the
+# working tree is in a (un)clean state.
+#
 get_git_s () {
 	IFS=\n
 	gits=$(git status --porcelain 2>/dev/null) || return 1
