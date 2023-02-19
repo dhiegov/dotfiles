@@ -8,27 +8,34 @@ get_git_s () {
 	[ ${#gits} -eq 0 ] && { echo -n "clean "; return 0; }
 
 	# modified staged files
-	M=$(echo $gits | grep -e '^M' | wc -l)
+	echo $gits | grep -e '^M' 1>/dev/null
+	M=$?
 	# modified unstaged files
-	m=$(echo $gits | grep -e '^ M' | wc -l)
+	echo $gits | grep -e '^ M' 1>/dev/null
+	m=$?
 	# unadded / untracked files
-	a=$(echo $gits | grep -e '^??' | wc -l)
+	echo $gits | grep -e '^??' 1>/dev/null
+	a=$?
 	# git added / newly tracking files
-	A=$(echo $gits | grep -e '^A' | wc -l)
+	echo $gits | grep -e '^A' 1>/dev/null
+	A=$?
 	# deleted unstaged files
-	d=$(echo $gits | grep -e '^ D' | wc -l)
+	echo $gits | grep -e '^ D' 1>/dev/null
+	d=$?
 	# deleted staged files
-	D=$(echo $gits | grep -e '^D' | wc -l)
+	echo $gits | grep -e '^D' 1>/dev/null
+	D=$?
 	# renamed staged files
-	R=$(echo $gits | grep -e '^R' | wc -l)
+	echo $gits | grep -e '^R' 1>/dev/null
+	R=$?
 
-	mout=$([ $m -gt 0 ] && echo -n m)
-	mout=$mout$([ $M -gt 0 ] && echo -n M)
-	aout=$([ $a -gt 0 ] && echo -n a)
-	aout=$aout$([ $A -gt 0 ] && echo -n A)
-	dout=$([ $d -gt 0 ] && echo -n d)
-	dout=$dout$([ $D -gt 0 ] && echo -n D)
-	rout=$([ $R -gt 0 ] && echo -n R)
+	mout=$([ $m -eq 0 ] && echo -n m)
+	mout=$mout$([ $M -eq 0 ] && echo -n M)
+	aout=$([ $a -eq 0 ] && echo -n a)
+	aout=$aout$([ $A -eq 0 ] && echo -n A)
+	dout=$([ $d -eq 0 ] && echo -n d)
+	dout=$dout$([ $D -eq 0 ] && echo -n D)
+	rout=$([ $R -eq 0 ] && echo -n R)
 	echo -n "$aout$mout$dout$rout "
 }
 
