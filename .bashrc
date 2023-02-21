@@ -20,26 +20,19 @@ get_git_s () {
 	[ ${#gits} -eq 0 ] && { echo -n "clean "; return 0; }
 
 	# modified staged files
-	echo $gits | grep -e '^M' 1>/dev/null
-	M=$?
+	echo $gits | grep -e '^M' 1>/dev/null; M=$?
 	# modified unstaged files
-	echo $gits | grep -e '^.M' 1>/dev/null
-	m=$?
+	echo $gits | grep -e '^.M' 1>/dev/null; m=$?
 	# unadded / untracked files
-	echo $gits | grep -e '^??' 1>/dev/null
-	a=$?
+	echo $gits | grep -e '^??' 1>/dev/null; a=$?
 	# git added / newly tracking files
-	echo $gits | grep -e '^A' 1>/dev/null
-	A=$?
+	echo $gits | grep -e '^A' 1>/dev/null; A=$?
 	# deleted unstaged files
-	echo $gits | grep -e '^ D' 1>/dev/null
-	d=$?
+	echo $gits | grep -e '^ D' 1>/dev/null; d=$?
 	# deleted staged files
-	echo $gits | grep -e '^D' 1>/dev/null
-	D=$?
+	echo $gits | grep -e '^D' 1>/dev/null; D=$?
 	# renamed staged files
-	echo $gits | grep -e '^R' 1>/dev/null
-	R=$?
+	echo $gits | grep -e '^R' 1>/dev/null; R=$?
 
 	mout=$([ $m -eq 0 ] && echo -n m)$([ $M -eq 0 ] && echo -n M)
 	aout=$([ $a -eq 0 ] && echo -n a)$([ $A -eq 0 ] && echo -n A)
