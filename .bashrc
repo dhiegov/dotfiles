@@ -55,14 +55,12 @@ get_git_b () {
 # made with the help of https://bashrcgenerator.com/
 #
 # looks like this:
-# ╱ username@hostname HH:MM current-directory
-# ╲ $ typed command
+# username@hostname HH:MM current-directory $ typed command
 #
 # and like this when in a git repo's main branch with some staged files:
-# ╱ mario@peachmainframe 20:30 bowser-destroyer-hack
-# ╲ main AmM $ echo 'mario' > its-me.txt
+# mario@peachmainframe 20:30 bowser-destroyer-hack main AmM $ echo 'mario' > its-me.txt
 #
-export PS1="╱ \u@\h \A \[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;14m\]\W\[$(tput sgr0)\]\n╲ \$(get_git_b)\$(get_git_s)\[$(tput sgr0)\]\[\033[38;5;3m\]\\$\[$(tput sgr0)\] "
+export PS1="\u@\h \A \[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;14m\]\W\[$(tput sgr0)\] \$(get_git_b)\$(get_git_s)\[$(tput sgr0)\]\[\033[38;5;3m\]\\$\[$(tput sgr0)\] "
 
 # got from https://news.ycombinator.com/item?id=11070797
 alias config='/usr/bin/git --git-dir=$HOME/.config.git/ --work-tree=$HOME'
