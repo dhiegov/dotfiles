@@ -73,7 +73,7 @@ alias py='python3'
 
 # default parameters
 alias grep='grep --color=auto --ignore-case'
-alias ls='ls --color=auto --group-directories-first'
+alias ls='ls --human-readable --color=auto --group-directories-first'
 
 # autorun at the start of every terminal window
 when --past=0 --future=3
