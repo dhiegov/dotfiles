@@ -75,6 +75,8 @@ alias py='python3'
 alias grep='grep --color=auto --ignore-case'
 alias ls='ls --human-readable --color=auto --group-directories-first'
 
+[ -f .bashrc_private ] && source .bashrc_private
+
 # autorun at the start of every terminal window
 when --past=0 --future=3
 
