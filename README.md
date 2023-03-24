@@ -3,7 +3,7 @@
 
 Hey! o/ I'm glad you stopped by. This repo contains config files and some code,
 especially in shell script, that I don't mind leaving in the public domain.
-Yop, you can do *anything* with these files, post them in your own github repo,
+Yop, you can do *anything* with these files, such as post them in your own github repo,
 make money out of them, even claim you created them yourself :D, that's what
 the [license](UNLICENSE) grants you.
 
