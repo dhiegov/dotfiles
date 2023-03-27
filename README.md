@@ -15,11 +15,10 @@ this repo is enough.
 
 [1]: https://en.wikipedia.org/wiki/Leviathan_(Hobbes_book)
 
-"why are you doing this? does this have a virus somewhere? I... I.. I just
-can't believe people would work for free"
+"why are you doing this? I... I.. I just can't believe people would work for
+free"
 
-Well if it has a virus, then I infect my own computer with it everyday. I do
-this because I think it's nice and I wish people did this too, so I might
+I do this because I think it's nice and I wish people did this too, so I might
 aswell set the example. Also eh.. It's not _really_ for free, it adds to my
 portfolio and soon [greedy villain voice] y'all be able to give me money heheh
 (I'll setup a donate link, you won't really have to pay me though).
