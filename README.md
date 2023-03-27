@@ -24,3 +24,7 @@ set the example. Also eh.. It's not _really_ for free, it adds to my portfolio
 and soon [greedy villain voice] y'all be able to give me money heheh (I'll
 setup a donate link, you won't really have to pay me though).
 
+Beyond that, it wouldn't make sense for me to prosecute someone for using the
+same set of options that I used, as option names and values in most cases are
+predefined fixed strings.
+
