@@ -15,13 +15,13 @@ this repo is enough.
 
 [1]: https://en.wikipedia.org/wiki/Leviathan_(Hobbes_book)
 
-"why are you doing this? I... I.. I just can't believe people would work for
-free"
+> Why are you doing this? I can't believe people would not want to be credited
 
-I do this because I think it's nice and I wish people did this too, so I might
-aswell set the example. Also eh.. It's not _really_ for free, it adds to my
-portfolio and soon [greedy villain voice] y'all be able to give me money heheh
-(I'll setup a donate link, you won't really have to pay me though).
+I want to be credited, I'm just not forcing you to do it. I do this because I
+think it's nice and I wish people did this too, so I might aswell set the
+example. Also eh.. It's not _really_ for free, it adds to my portfolio and soon
+[greedy villain voice] y'all be able to give me money heheh (I'll setup a
+donate link, you won't really have to pay me though).
 
 Beyond that, it wouldn't make sense for me to prosecute someone for using the
 same set of options that I used, as option names and values in most cases are
