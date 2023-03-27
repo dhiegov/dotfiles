@@ -26,5 +26,7 @@ portfolio and soon [greedy villain voice] y'all be able to give me money heheh
 
 Beyond that, it wouldn't make sense for me to prosecute someone for using the
 same set of options that I used, as option names and values in most cases are
-predefined fixed strings.
+predefined fixed strings. Why would I use a more restrictive license if I won't
+be enforcing it? At that point its only purpose is to inform the author's
+whishes to get credit, unauthorize commercial use, etc.
 
